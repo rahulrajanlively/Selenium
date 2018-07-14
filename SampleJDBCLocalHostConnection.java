@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 public class SampleJDBC 
 {
     //There exists a database named 'qadbt' in Mysql Server containing a table named EmployeeInfo.
+    //Prerequisite add external jar file 'mysql-connector-java.jar'.
     
     public static void main( String[] args ) throws SQLException
     {
