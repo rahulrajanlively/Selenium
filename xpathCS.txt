@@ -1,6 +1,11 @@
 // XPath CheatSheet
+
+Sectio-wise
+http://scraping.pro/res/xpath-cheat/xpath_css_dom_ref.pdf
+Table-Wise
+http://scraping.pro/res/xpath-cheat/xpath_css_dom_recipes.pdf
+
 // To test XPath in your Chrome Debugger: $x('/html/body')
-// http://www.jittuu.com/2012/2/14/Testing-XPath-In-Chrome/
 
 
 // 0. XPath Examples.
