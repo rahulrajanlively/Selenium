@@ -1,1 +1,43 @@
 
+
+// Configure the Action
+Actions act = new Actions(driver);
+
+// To focus on element using webdriver
+act.moveToElement(element).perform();
+
+// To click on the element to focus
+act.moveToElement(element).click().perform();
+
+//drag and drop
+WebElement dragElement=driver.findElement(By.id(“draggable”));
+WebElement dropElement=driver.findElement(By.id(“droppable”));
+
+  //Without dragAndDrop() method
+      Action dragDrop = act.clickAndHold(dragElement).moveToElement(dropElement).build();
+      dragDrop.perform();
+      
+//Move to Menu and then to menu option
+WebElement menu = driver.findElement(By.id(“menu”));
+WebElement menuoption = driver.findElement(By.id(“menuoption”));
+Action subMenu= act.moveToElement(menu).moveToElement(menuoption).build();
+subMenu.perform();
+
+
+## ALWAYS REMEMBER TO BIULD AND PERFORM
+## Builded action can be stored in an onject of action class, anf then it could be performed.
+## You can build a series of actions using the Action and Actions classes. Just remember to close the series with the build() method.
+
+
+Some commonly used methods:
+->  clickAndHold()	= Clicks (without releasing) at the current mouse location.
+->  contextClick()	= Performs a context-click at the current mouse location.
+->  doubleClick()	  = Performs a double-click at the current mouse location.
+->  dragAndDrop(source, target)	= Performs click-and-hold at the location of the source element, moves to the location of the target element, then releases the mouse.
+->  dragAndDropBy(source, x-offset, y-offset) =	Performs click-and-hold at the location of the source element, moves by a given offset, then releases the mouse.
+->  keyDown(modifier_key) =	Performs a modifier key press. Does not release the modifier key - subsequent interactions may assume it's kept pressed.
+->  keyUp(modifier _key)	= Performs a key release.
+->  moveByOffset(x-offset, y-offset)	= Moves the mouse from its current position (or 0,0) by the given offset.
+->  moveToElement(toElement)	= Moves the mouse to the middle of the element. 
+->  release() =	Releases the depressed left mouse button at the current mouse location
+->  sendKeys(onElement, charsequence) =	Sends a series of keystrokes onto the element. 
