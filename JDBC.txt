@@ -1,0 +1,35 @@
+Development process
+	1. Get a connection to database 
+      [Connection myConn = DriverManager.getConnection(dbURL,usrName,pwd);]
+	2. Create a Statement object 
+      [Statement myStmt = myConn.createStatement();]
+	3. Execute SQL Query 
+      [ResultSet myRs = myStmt.executeQuery("Select * from")]
+	4. Process Result Set. 
+      [using rs.next() to move forward and check if element exists. Hint Use while loop]
+      
+Prepared Statements
+	§ MyStmt = MyConn.prepareStatment("Select * from employee where salary >? And department=?")
+	▪ Instead of using hard coded parameter using parameter symbols
+		○ Use question mark as placeholder (?)
+	▪ Parameter values are set based on their datatypes and position.
+      myStmt.setDouble(1,8000); (position,value)
+      myStmt.setDouble(2,"Engineering"); (position,value)
+
+Getting rid of MySQL SSL Warning Message
+  To get rid of the warning message, append ?useSSL=false to the end of your database connection string.
+  For example,
+  Replace – jdbc:mysql://localhost:3306/demo
+  With – jdbc:mysql://localhost:3306/demo?useSSL=false
+  Note that I appended ?useSSL=false to the end.
+  
+TO UPDATE/EDIT DATABASE
+	▪ myStmt.executeUpdate() method is used to update DB[generic method]; used to insert update and delete; returns #rows affected.
+
+Insert:
+    INSERT INTO employees (id,last_name,first_name,email, department, salary) VALUES (13,'Rajan','Rahul','rahul.rajan@foo.com', 'CEO', 5000000.00) 
+Delete:
+     delete from employees where_____
+Update:
+     update employees set email='rahulrajan@gmail.com' where last_name='Rajan' and first_name='Rahul'
+
