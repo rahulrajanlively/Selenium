@@ -1,0 +1,40 @@
+
+
+
+git --version
+
+git config --global user.name "rahulrajanlively"
+
+git config --global user.email "rahulrajanlively@gmail.com"
+
+git config --list
+
+pwd
+
+ls -al
+
+gedit .gitconfig 
+
+mkdir git_workspace
+
+cd git_workspace/
+
+git clone https://github.com/rahulrajanlively/freeCrmCucumber.git
+
+cd freeCrmCucumber/
+
+touch HelloWorld.java
+
+gedit HelloWorld.java
+
+git status
+
+git add HelloWorld.java
+
+git status
+
+git commit -m "First git command" HelloWorld.java
+
+git push -u origin master
+
+git push -u origin master
